@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Class Compare</title>
+    <meta name="description" content="A website to compare DPS specs in WoW using a list of the most common descriptors from Icy Veins.">
+    <meta name="keywords" content="world of warcraft, specs, class, choice">
+    <meta property="og:title" content="ClassCompare">
+    <meta property="og:site_name" content="ClassCompare">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/warrior.png">
+    <meta property="og:url" content="https://classchoice.herokuapp.com/">
+    <meta property="og:description" content="A website to compare DPS specs in WoW using a list of the most common descriptors from Icy Veins.">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		<script src="app.js"></script>
+	</head>
+	<body ng-controller="MainCtrl">
+    <div class="container-fluid">
+      <div class="header">
+        <code ng-show="empty.length > 0">
+          The following classes have guides but do not list strengths or weaknesses: <span ng-repeat="spec in empty track by $index">{{ clean(spec.spec) }} {{ clean(spec._class) }}</span>.
+        </code>
+        <span>
+          <h1 class="display-4">Class Compare</h1>
+          <h6><small>Made possible by <a href="http://www.icy-veins.com/" class="card-link">Icy Veins</a></small></h6>
+        </span>
+      </div>
+      <hr>
+      <div class="sort-list">
+        <span class="btn" ng-class="active(word[0])" ng-repeat="word in parsed" ng-click="toggle(word[0])">{{word[0]}}</span>
+      </div>
+      <hr>
+      <div class="card-box">
+        <div class="flex-card" ng-repeat="spec in info | filter:type | wordFilter:currentFilters track by $index">
+          <div class="card card-block">
+            <h4 class="card-title"><span class="{{spec._class+'-icon'}}"></span>{{ clean(spec.spec) }} {{ clean(spec._class) }}</h4>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Strengths</b></li>
+              <li class="list-group-item" ng-repeat="str in spec.strengths"><span ng-class="highlightPositive(str)">{{ str }}</span></li>
+            </ul>
+            <br>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Weaknesses</b></li>
+              <li class="list-group-item negative" ng-repeat="weak in spec.weaknesses"><span ng-class="highlightNegative(weak)">{{ weak }}</span></li>
+            </ul>
+            <div class="card-block">
+              <a class="card-link" href="{{'http://www.icy-veins.com/wow/'+spec.spec+'-'+spec._class+'-pve-dps-guide'}}">Guide</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+	</body>
+</html>

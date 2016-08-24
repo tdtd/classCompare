@@ -1,0 +1,197 @@
+html{
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.header{
+  width: 100%;
+  code{
+    span{
+      &:nth-last-child(1){
+        &::after{
+          content: none;
+        }
+      }
+      &::after{
+        content: ', ';
+      }
+    }
+  }
+}
+
+.highlight-positive{
+  background: fadeout(#5cb85c, 75%);
+}
+
+.highlight-negative{
+  background: fadeout(#d9534f, 75%);
+}
+
+.sort-list{
+  span{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+//XS
+@media (max-width: 544px) {
+  .card-box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    .flex-card{
+      padding: 5px;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+  }
+}
+//SM
+@media (min-width: 544px) {
+  .card-box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    .flex-card{
+      padding: 5px;
+      flex-grow: 1;
+      max-width: 100%!important;
+    }
+  }
+}
+//MD
+@media (min-width: 768px) {
+  .card-box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    .flex-card{
+      padding: 5px;
+      flex-grow: 1;
+      max-width: 50%!important;
+    }
+  }
+}
+//LG
+@media (min-width: 992px) {
+  .card-box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    .flex-card{
+      padding: 5px;
+      flex-grow: 1;
+      max-width: 33%!important;
+    }
+  }
+}
+//XL
+@media (min-width: 1200px) {
+  .card-box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    .flex-card{
+      padding: 5px;
+      flex-grow: 1;
+      max-width: 25%!important;
+    }
+  }
+}
+
+.death-knight-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') 0 0;
+}
+.demon-hunter-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') 40px 0;
+}
+.druid-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -40px 0;
+}
+.hunter-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -80px 0;
+}
+.mage-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -120px 0;
+}
+.monk-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -160px 0;
+}
+.paladin-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -200px 0;
+}
+.priest-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -240px 0;
+}
+.rogue-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -280px 0;
+}
+.shaman-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -320px 0;
+}
+.warlock-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -360px 0;
+}
+.warrior-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  background: url('../assets/class-icons-sprites.png') -400px 0;
+}
